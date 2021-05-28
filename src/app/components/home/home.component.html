@@ -1,0 +1,15 @@
+<!--Ejemplo para imprimir los datos de peticion sencilla 
+    <ul>
+    <li *ngFor="let pais of paises">
+        {{ pais.name }} - {{ pais.population | number }}
+    </li>
+</ul> -->
+<!--Alerta por si ocurre un error en el observable-->
+<div *ngIf="error" class="alert alert-danger animated fadeIn">
+    <h3>Error</h3>
+    <p>{{ err_msg }}</p>
+</div>
+<!-- Loading no se alcanza a ver por que la peticion lo hace muy rapido-->
+<app-loading *ngIf="loading"></app-loading>
+<!--Items es el arreglo que pasamos de home component a el componente app-tarjetas-->
+<app-tarjetas [items] = "nuevasCanciones"></app-tarjetas>

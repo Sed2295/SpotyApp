@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col">
+        <input type="text" (keyup)="buscar(termino.value);" class="form-control" placeholder="Buscar artista..."#termino>
+    </div>
+</div>
+<!--Codigo sin reutilizar el componente tarjetas 
+<div class="card-columns m-5 text-center">
+    <div *ngFor="let artista of busqueda" class="card">
+        <Usamos el pipe de noimages para evitar el error por si no se encuentra>
+        <img [src]="artista.images | noimage" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ artista.name }}</h5>
+            <p class="card-text text-center">
+                
+            </p>
+        </div>
+    </div>
+</div> -->
+<!--En al app-tarjetas tenemos un ngFor pero eso no nos importa solo va a aparecer un espacio en blanco-->
+<div class="mt-2 mb-3">
+    <app-loading *ngIf="loading"></app-loading>
+</div>
+<div class="mt-5">
+    <app-tarjetas *ngIf="!loading" [items]="busqueda" ></app-tarjetas>
+</div>
+
